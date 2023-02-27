@@ -23,26 +23,51 @@ import blog3 from './blog3.png';
 import s1 from './s1.png';
 import s2 from './s3.png';
 import s3 from './s3.png';
-import menu from './menu.png'
+import menu from './menu.png';
+import { delay, motion } from 'framer-motion';
 
 
 const Home = () => {
     return ( 
         <div className=' font-montserrat text-[#062b09]'>
-            <div className=" h-[702px] w-full bg-[#e3f0e9] lg:py-8 py-5 lg:px-10 px-5">
+            <motion.div 
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{type:'tween', duration:1, delay:0.1}}
+            className=" h-[702px] w-full bg-[#e3f0e9] lg:py-8 py-5 lg:px-10 px-5">
                 <div className=" navBar flex justify-between">
-                    <span className=" flex flex-row justify-center items-center">
+                    <motion.span 
+                    initial={{x:-1000}}
+                    animate={{x:0}}
+                    transition={{type:'spring', delay:1.1, stiffness:50}}
+                    className=" flex flex-row justify-center items-center">
                         <img src={ logo } className=" " alt="" />
                         <p className=" font-medium text-2xl text-[#062b09] font-sung">Coconatty</p>
-                    </span>
+                    </motion.span>
                     <span className=' hidden lg:flex flex-row justify-center items-center space-x-10'>
-                        <img src={ heart } className='' alt="" />
-                        <img src={ profile } className='' alt="" />
-                        <img src={ cart } className='' alt="" />
+                        <motion.img
+                        initial={{ x:1000 }}
+                        animate={{ x:0 }}
+                        transition={{ type:'spring', delay:1.2, stiffness:50 }}
+                        src={ heart } className='' alt="" />
+                        <motion.img 
+                        initial={{ x:1100 }}
+                        animate={{ x:0 }}
+                        transition={{ type:'spring', delay:1.3, stiffness:50 }}
+                        src={ profile } className='' alt="" />
+                        <motion.img 
+                        initial={{ x:1200 }}
+                        animate={{ x:0 }}
+                        transition={{ type:'spring', delay:1.4, stiffness:50 }}
+                        src={ cart } className='' alt="" />
                     </span>
-                    <span className=' flex lg:hidden items-center justify-center'>
+                    <motion.span 
+                    initial={{ x:1000 }}
+                    animate={{ x:0 }}
+                    transition={{ type:'spring', delay:1.2, stiffness:50 }}
+                    className=' flex lg:hidden items-center justify-center'>
                         <img src={ menu } className='w-[18px] h-[12px]' alt="" />
-                    </span>
+                    </motion.span>
                 </div>
                 <div className=' flex lg:flex-row flex-col lg:justify-between justify-center items-center'>
                     <div className=' mt-[41px] lg:mt-0 flex flex-col justify-center lg:justify-start lg:items-start items-center '>
@@ -52,12 +77,16 @@ const Home = () => {
                     <img src={ coco } className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]' alt="" />
                     <button className='mt-[12px] block lg:hidden p-[10px] bg-white w-[150px] hover:bg-[#062b09] hover:bg-opacity-70 transition-all delay-100 hover:text-white hover:border rounded-md text-[#062b09] font-montserrat font-semibold text-[18px]'>Shop Now</button>
                 </div>
-            </div>
+            </motion.div>
             <span className=' flex justify-center items-center flex-row mt-6 space-x-2'>
                 <button className=' lg:w-[50px] w-[27px] h-[8px] bg-[#062b09] rounded-md'></button>
                 <button className=' lg:w-[50px] w-[27px] h-[8px] bg-[#D9D9D9] rounded-md'></button>
             </span>
-            <div className=' flex flex-col w-full justify-center items-center mt-[110px] px-5 lg:px-14'>
+            <motion.div 
+            initial={{opacity:0, y:250}}
+            whileInView={{opacity:1, y:0}}
+            transition={{type:'tween', duration:1,}}
+            className=' flex flex-col w-full justify-center items-center mt-[110px] px-5 lg:px-14'>
                 <p className=' text-[#062b09] lg:text-[32px] text-xl font-montserrat font-semibold'>Most Viewed Products</p>
                 <p className=' text-[#062b09] lg:text-[18px] text-base text-center  font-montserrat font-medium mt-[20px]'>Vorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <div className=' lg:justify-between justify-center space-y-8 lg:space-y-0 items-center w-full flex flex-col lg:flex-row mt-[63px]'>
@@ -98,9 +127,13 @@ const Home = () => {
                     </div>
                 </div>
                 <button className=' py-[10px] px-[20px] mt-[63px] bg-[#e3f0e9] rounded-md font-semibold text-base'>View More</button>
-            </div>
+            </motion.div>
 
-            <div className=' lg:px-14 px-5 w-full flex lg:flex-row flex-col justify-between items-center mt-[100px] space-y-8 lg:space-y-0'>
+            <motion.div 
+            initial={{opacity:0, y:250}}
+            whileInView={{opacity:1, y:0}}
+            transition={{type:'tween', duration:1,}}
+            className=' lg:px-14 px-5 w-full flex lg:flex-row flex-col justify-between items-center mt-[100px] space-y-8 lg:space-y-0'>
                 <div className=' lg:w-[47%] w-full h-[350px] bg-[#e3f0e9] rounded-[10px] relative '>
                     <img src={ female } className=' absolute -bottom-1 -left-1 w-[153.1px] h-[231px] lg:w-[254px] lg:h-[350px]' alt="" />
                     <div className=' absolute right-7 top-24'>
@@ -121,9 +154,13 @@ const Home = () => {
                         </span>  
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className=' lg:px-14 px-5 mt-[100px] flex flex-col justify-center items-center'>
+            <motion.div 
+            initial={{opacity:0, y:250}}
+            whileInView={{opacity:1, y:0}}
+            transition={{type:'tween', duration:1,}}
+            className=' lg:px-14 px-5 mt-[100px] flex flex-col justify-center items-center'>
                 <p className=' lg:text-[32px] text-xl font-semibold'>New Arrivals</p>
                 <p className=' text-[#062b09] lg:text-[18px] text-base text-center font-montserrat font-medium mt-[20px]'>Vorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <div className=' justify-between items-center w-full flex lg:flex-row flex-col space-y-8 lg:space-y-0 mt-[63px]'>
@@ -164,9 +201,13 @@ const Home = () => {
                     </div>
                 </div>
                 <button className=' py-[10px] px-[20px] mt-[63px] bg-[#e3f0e9] rounded-md font-semibold text-base'>View More</button>
-            </div>
+            </motion.div>
 
-            <div className=' lg:px-14 px-5 mt-[100px]'>
+            <motion.div 
+            initial={{opacity:0, y:250}}
+            whileInView={{opacity:1, y:0}}
+            transition={{type:'tween', duration:1,}}
+            className=' lg:px-14 px-5 mt-[100px]'>
                 <div className=' bg-[#062b09] w-full h-[350px] p-[30px] flex justify-center items-center rounded-[20px] relative'>
                     <img src={ lm } className='hidden lg:block absolute top-[30px] right-[30px]' alt="" />
                     <img src={ frame } className='hidden lg:block absolute bottom-[30px] right-[30px]' alt="" />
@@ -176,9 +217,13 @@ const Home = () => {
                         <button className=' px-[20px] py-[10px] border border-[#e3f0f9] mt-3 rounded-md text-white text-base'>Learn More</button>
                     </div> 
                 </div>
-            </div>  
+            </motion.div>  
 
-            <div className=' mt-[83px] lg:px-14 px-5 flex flex-col justify-center items-center'>
+            <motion.div 
+            initial={{opacity:0, y:250}}
+            whileInView={{opacity:1, y:0}}
+            transition={{type:'tween', duration:1,}}
+            className=' mt-[83px] lg:px-14 px-5 flex flex-col justify-center items-center'>
                 <p className=' lg:text-[32px] text-xl  font-semibold'>From Our Blogs</p>
                 <p className=' text-[#062b09] lg:text-[18px] text-base text-center font-montserrat font-medium mt-[20px]'>Join Our Community for Coconut Skincare Insights and Wellness Tips</p>
                 <div className=' mt-[62px] flex lg:flex-row flex-col justify-between space-y-8 lg:space-y-0'>
@@ -200,9 +245,13 @@ const Home = () => {
                         <p className=' text-base font-normal leading-[30px]'>We’ve got the dirt on this cult beauty cleanser so you can join the legions of African black soap devotees who can’t believe they ever lived without it.</p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className=' mt-[105px] lg:px-14 w-full px-5 bg-[#E3F0E9] md:py-12 py-6 flex  md:flex-row flex-col'>
+            <motion.div 
+            initial={{opacity:0, y:250}}
+            whileInView={{opacity:1, y:0}}
+            transition={{type:'tween', duration:1,}}
+            className=' mt-[105px] lg:px-14 w-full px-5 bg-[#E3F0E9] md:py-12 py-6 flex  md:flex-row flex-col'>
                 <div className=''>
                     <p className=' text-[#101828] lg:text-[30px] text-[24px] font-semibold'>Get notified when we launch a product</p>
                     <p className='text-[#667085] mt-4 font-normal text-base lg:text-[20px]'>Stay up to date with the latest news, announcements, and articles.</p>
@@ -211,9 +260,13 @@ const Home = () => {
                     <input type="text" className=' px-[10px] h-[44px] py-[7px] font-montserrat text-base lg:w-[280px] w-full border border-[#d0d5dd] bg-white shadow-sm shadow-[rgba(16,24,40,0.05)] rounded-lg' placeholder='Enter Your Email' name="" id="" />
                     <button className=' px-[14px] py-[10px] h-[44px] bg-[#062b09] border shadow-sm rounded-lg text-white font-medium text-base'>Subscribe</button>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className=' footer lg:px-14 px-5  mt-[63px] '>
+            <motion.div 
+            initial={{opacity:0, y:250}}
+            whileInView={{opacity:1, y:0}}
+            transition={{type:'tween', duration:1,}}
+            className=' footer lg:px-14 px-5  mt-[63px] '>
                 <div className=' pb-[62px] border-b flex lg:flex-row flex-col justify-between'>
                 <div className=' space-y-5'>
                     <span className=' flex flex-row items-center'>
@@ -266,7 +319,7 @@ const Home = () => {
                     <p className=' mt-1 text-sm font-semibold'>Contact</p>
                 </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className=' copyrights mb-8 flex lg:flex-row flex-col-reverse lg:justify-between justify-center items-center mt-6 px-5 lg:px-14 lg:space-y-0'>
                 <p className=' text-base font-normal text-[#98A2B3] mt-3 lg:mt-0'>© 2023 Coconatty. All rights reserved.</p>
